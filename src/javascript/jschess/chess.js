@@ -865,10 +865,7 @@ Board.prototype.doMove = function (move) {
     if (pieceType(this.board[from]) == PAWN) {
         result.rule50Counter = 0;
         if (Math.abs(to - from) == DELTA_N + DELTA_N) {
-            if (this.board[to + DELTA_W] == pieceMake(them, PAWN) ||
-                this.board[to + DELTA_E] == pieceMake(them, PAWN)) {
-                result.epSquare = (to + from) / 2;
-            }
+            result.epSquare = (to + from) / 2;
         }
     }
 
